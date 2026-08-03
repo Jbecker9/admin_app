@@ -8,6 +8,9 @@ export default defineConfig({
       // the origin you will be accessing via browser
       origin: 'http://localhost:5173/',
     },
+    proxy: {
+       '/hello': 'http://localhost:3000'
+    },
   },
   build: {
     // generate .vite/manifest.json in outDir
@@ -17,5 +20,7 @@ export default defineConfig({
       input: '/path/to/main.js',
     },
   },
-  plugins: [react()],
+  plugins: [
+    react(),
+  ],
 })
